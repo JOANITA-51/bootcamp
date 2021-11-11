@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/JOANITA-51/bootcamp/issues"
   },
-  "homepage": "https://github.com/JOANITA-51/bootcamp#readme"
+  "homepage": "https://github.com/JOANITA-51/bootcamp#readme",
+  "keywords": [],
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.4"
+  }
 }
