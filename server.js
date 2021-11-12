@@ -8,7 +8,7 @@ const { request } = require("http");
 app.use(bodyParser.urlencoded({extended:true}));
 
 //connecting to the database
-mongoose.connect("mongodb+srv://JOANITA:WoebXeNVeVEzZ8DL@ablestatecohort1.hx7bi.mongodb.net/newsletter")
+mongoose.connect("mongodb+srv://JOANITA:WoebXeNVeVEzZ8DL@ablestatecohort1.hx7bi.mongodb.net/Bootcamp")
 
 //creating a data schema :an abstract design that represents the storage of the data in a database.
 const newsSchema = {
@@ -17,22 +17,22 @@ const newsSchema = {
 }
 
 //creating a model :abstract model that organizes elements of data
-const note = mongoose.model("Note", newsSchema)
+const newsletter = mongoose.model("Email", newsSchema)
 
 //getting from our express server
-app.get("/", function(req, res){
+app.get("/news", function(req, res){
     res.sendFile(__dirname + "/index.html");
 })
 
 //taking in the data from the form that has been referenced by the names
-app.post ("/", function(req, res){
-    let newEmail = new email ({
-        title: "Email",
+app.post ("/news", function(req, res){
+    let newEmail = new newsletter ({
+         title: "Email",
         content:req.body.newsletter
     });
     newEmail.save();
     //to prevent the over loading 
-    res.redirect("/")
+    res.redirect("/news")
 })
 
 app.listen(3000, function(){
